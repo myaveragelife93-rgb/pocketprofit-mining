@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>PocketProfit Mining</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="topbar">
+      <div>
+        <div class="brand">POCKET<span>PROFIT</span></div>
+        <p class="subtitle">Mining Profitability Dashboard</p>
+      </div>
+
+      <div class="live">
+        <span class="dot"></span>
+        LIVE
+      </div>
+    </header>
+
+    <section class="hero">
+
+      <div>
+        <p class="eyebrow">MINING INTELLIGENCE</p>
+
+        <h1>
+          Know your profit<br />
+          <span>before you mine.</span>
+        </h1>
+
+        <p class="description">
+          Compare mining economics using your electricity rate,
+          hardware power consumption and estimated coin production.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- SETTINGS -->
+
+    <section class="settings">
+
+      <div class="input-card">
+
+        <label>Electricity Cost</label>
+
+        <div class="input-row">
+          <span>$</span>
+          <input
+            id="electricity"
+            type="number"
+            value="0.15"
+            min="0"
+            step="0.01"
+          />
+        </div>
+
+        <small>USD per kWh</small>
+
+      </div>
+
+
+      <div class="input-card">
+
+        <label>Power Consumption</label>
+
+        <div class="input-row">
+          <input
+            id="watts"
+            type="number"
+            value="250"
+            min="0"
+          />
+
+          <span>W</span>
+        </div>
+
+        <small>Hardware power draw</small>
+
+      </div>
+
+
+      <div class="input-card">
+
+        <label>Mining Hours</label>
+
+        <div class="input-row">
+          <input
+            id="hours"
+            type="number"
+            value="24"
+            min="1"
+            max="24"
+          />
+
+          <span>hrs</span>
+        </div>
+
+        <small>Hours mined per day</small>
+
+      </div>
+
+
+      <div class="profit-card">
+
+        <label>Daily Electricity</label>
+
+        <strong id="dailyPower">$0.90</strong>
+
+        <small>Estimated power cost</small>
+
+      </div>
+
+    </section>
+
+
+    <!-- COINS -->
+
+    <section class="panel">
+
+      <div class="panel-header">
+
+        <div>
+          <p class="eyebrow">MARKET DATA</p>
+          <h2>Mining Opportunities</h2>
+        </div>
+
+        <button id="refresh">
+          ↻ Refresh Prices
+        </button>
+
+      </div>
+
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Coin</th>
+              <th>Market Price</th>
+              <th>Daily Yield</th>
+              <th>Revenue</th>
+              <th>Electricity</th>
+              <th>Net Profit</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="coinTable"></tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+      <div class="stat">
+        <span>Best Estimated Coin</span>
+        <strong id="bestCoin">—</strong>
+      </div>
+
+      <div class="stat">
+        <span>Highest Daily Profit</span>
+        <strong id="bestProfit">$0.00</strong>
+      </div>
+
+      <div class="stat">
+        <span>Monthly Estimate</span>
+        <strong id="monthlyProfit">$0.00</strong>
+      </div>
+
+    </section>
+
+
+    <footer>
+
+      <p>
+        PocketProfit Mining provides estimates only.
+        Actual results vary based on network difficulty,
+        pool fees, hardware efficiency, uptime and cryptocurrency prices.
+      </p>
+
+    </footer>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
